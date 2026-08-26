@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RodTasks para Windows 10 Mobile</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font-family: -apple-system, Segoe UI, system-ui, sans-serif;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+    line-height: 1.5;
+  }
+  h1 { margin-bottom: 4px; }
+  .tagline { opacity: 0.7; margin-top: 0; }
+  .card {
+    border: 1px solid rgba(128,128,128,0.35);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+  }
+  .step-num {
+    display: inline-block;
+    min-width: 1.5em;
+    font-weight: 600;
+    opacity: 0.6;
+  }
+  a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 6px;
+    background: #0f6cbd;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 8px;
+  }
+  code { background: rgba(128,128,128,0.15); padding: 2px 6px; border-radius: 4px; }
+</style>
+</head>
+<body>
+  <h1>RodTasks</h1>
+  <p class="tagline">Dock de Tarefas, Calendário, Rotina e Sticky Notes para Windows 10 Mobile.</p>
+
+  <p>
+    O RodTasks é sideloaded, não distribuído pela Microsoft Store — assinado
+    com um certificado autoassinado em vez de uma conta de desenvolvedor paga,
+    e compilado com .NET Native (a ferramenta de build moderna não empacota
+    mais o runtime pra ARM de 32-bit sozinha). Por isso são alguns downloads,
+    mas só dois são instalação única.
+  </p>
+
+  <div class="card">
+    <p><span class="step-num">1</span> No telefone: <strong>Configurações → Atualização e segurança → Para desenvolvedores</strong>, ligue o <strong>Modo desenvolvedor</strong>.</p>
+  </div>
+
+  <div class="card">
+    <p><span class="step-num">2</span> Baixe e instale o certificado. Só precisa uma vez por aparelho.</p>
+    <a class="button" href="rodtasks-uwp-public-cert.cer">Baixar certificado (.cer)</a>
+  </div>
+
+  <div class="card">
+    <p><span class="step-num">3</span> Baixe e instale esses dois pacotes de framework, nessa ordem. Também só precisa uma vez por aparelho.</p>
+    <a class="button" href="microsoft-net-native-framework-arm.appx">Baixar .NET Native Framework (.appx)</a><br>
+    <a class="button" href="microsoft-net-native-runtime-arm.appx">Baixar .NET Native Runtime (.appx)</a>
+  </div>
+
+  <div class="card">
+    <p><span class="step-num">4</span> Baixe e instale o app.</p>
+    <a class="button" href="rodtasks.appxbundle">Baixar RodTasks (.appxbundle)</a>
+  </div>
+
+  <p>
+    Se o Windows avisar sobre um publicador não confiável, instale o
+    certificado do passo 2 primeiro e tente de novo. Se o app instalar mas
+    fechar na hora, sem nem mostrar a splash screen, o passo 3 não foi feito.
+  </p>
+
+  <p>
+    Já tem o RodTasks instalado? O próprio app checa <code>version.json</code>
+    sozinho ao abrir e mostra um botão de atualizar quando tem versão nova —
+    não precisa voltar aqui pra cada atualização.
+  </p>
+
+  <hr style="margin-top:48px; opacity:0.3">
+  <p style="opacity:0.6; font-size:0.9em;">
+    App pessoal, sem outros usuários. Este repositório só distribui os
+    binários — o código-fonte fica num repositório privado separado.
+  </p>
+</body>
+</html>
