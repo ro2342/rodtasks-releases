@@ -43,6 +43,21 @@
 <body>
   <h1>RodTasks</h1>
   <p class="tagline">Dock de Tarefas, Calendário, Rotina e Sticky Notes para Windows 10 Mobile.</p>
+  <p style="opacity:0.75; font-size:0.9em;">
+    Versão publicada aqui agora: <strong id="current-version">carregando…</strong>
+    <span id="current-built-at"></span>
+  </p>
+  <script>
+    fetch('version.json?_=' + Date.now())
+      .then(function (r) { return r.json(); })
+      .then(function (v) {
+        document.getElementById('current-version').textContent = 'v' + v.version;
+        document.getElementById('current-built-at').textContent = ' (build ' + v.builtAt + ')';
+      })
+      .catch(function () {
+        document.getElementById('current-version').textContent = 'não consegui checar';
+      });
+  </script>
 
   <p>
     O RodTasks é sideloaded, não distribuído pela Microsoft Store — assinado
